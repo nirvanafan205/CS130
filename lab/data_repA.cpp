@@ -1,5 +1,7 @@
 #include <iostream>
-#include <vector>
+#include <bitset>
+#include <sstream>
+#include <iterator>
 
 using namespace std;
 
@@ -7,7 +9,7 @@ int main()
 {
 	cout << "Enter a 4 character long string" << endl;
 
-	string input;
+	string input; //input
 
 	cin >> input;
 
@@ -24,16 +26,49 @@ int main()
 
 	cout << "String entered: " << input << endl;
 
-	int i = 0;
+	int D = 0;
 
 	cout << "\nDEC: "; 
 
-	while(i != 4)
+	while(D != 4) //converts do decimal
 	{
-		int check = input[i];
+		int check = input[D];
 		cout << check << " ";
-		i++;
+		D++;
+	}
+
+	cout << endl;
+
+	int H = 0;
+
+	cout << "\nHEX: "; 
+
+	while(H != 4) //converts to hex
+	{
+		int check = input[H];
+		cout << hex << int(check) << " ";
+		H++;
+	}
+
+	cout << endl;
+
+	int B = 0;
+
+	cout << "\nBIN: " ;
+
+	while(B != 4) //converts to binary 
+	{
+		char letter = input[B];
+		cout << bitset<8>(letter).to_string() << " ";
+		B++;
 	}
 
 	cout << endl;
 }
+
+/*
+Write a C/C++ console program to convert a char or a char string to its decimal, 
+hexadecimal, and binary ASCII values. Input validation is required. The user must enter a string from 
+one to 4 char's long. If anything else is entered, let the user know and give him/her the opportunity to 
+reenter a valid string 
+*/
