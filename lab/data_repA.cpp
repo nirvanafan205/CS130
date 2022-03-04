@@ -22,8 +22,18 @@ int main()
 		count = input.length();
 	}
 
+	cout << "String entered: " << input << endl;
 
+	int i = 0;
 
+	cout << "\nDEC: "; 
 
+	while(i != 4)
+	{
+		int check = input[i];
+		cout << check << " ";
+		i++;
+	}
 
+	cout << endl;
 }
